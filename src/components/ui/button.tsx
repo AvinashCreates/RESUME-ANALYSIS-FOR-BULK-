@@ -5,16 +5,20 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        default: "bg-primary text-primary-foreground hover:bg-primary-light shadow-soft hover:shadow-medium transform hover:scale-[1.02]",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-soft",
+        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground shadow-soft",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-soft",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        hero: "bg-gradient-hero text-primary-foreground hover:shadow-strong transform hover:scale-[1.02] font-semibold",
+        success: "bg-gradient-success text-success-foreground hover:shadow-medium transform hover:scale-[1.02]",
+        warning: "bg-gradient-warning text-warning-foreground hover:shadow-medium transform hover:scale-[1.02]",
+        upload: "border-2 border-dashed border-primary/30 bg-primary-lighter/50 text-primary hover:border-primary hover:bg-primary-lighter transition-all duration-300",
       },
       size: {
         default: "h-10 px-4 py-2",
